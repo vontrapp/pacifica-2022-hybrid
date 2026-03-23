@@ -1,0 +1,74 @@
+{
+  "car_model": "Chrysler: Pacifica Hybrid 2022 Master",
+  "init": "ATSP6;ATST96;",
+  "pids": [
+    {
+      "pid": "22015B",
+      "pid_init": "ATSH7E4",
+      "parameters": [
+        { "name": "SOC_Raw", "expression": "B0", "unit": "%" },
+        { "name": "SOC_Display", "expression": "(B0 - 18) * 1.38", "unit": "%" }
+      ]
+    },
+    {
+      "pid": "220104",
+      "pid_init": "ATSH7E4",
+      "parameters": [
+        { "name": "SOH_Main", "expression": "B17 / 2.55", "unit": "%" },
+        { "name": "SOH_Capacity_Ah", "expression": "[B18:B19] / 100", "unit": "Ah" },
+        { "name": "SOH_Low_Cell", "expression": "B20 / 2.55", "unit": "%" }
+      ]
+    },
+    {
+      "pid": "0105",
+      "pid_init": "ATSH7E0",
+      "parameters": [
+        { "name": "Engine_Coolant_Temp", "expression": "A - 40", "unit": "°C" }
+      ]
+    },
+    {
+      "pid": "010D",
+      "pid_init": "ATSH7E0",
+      "parameters": [
+        { "name": "Vehicle_Speed", "expression": "A", "unit": "kmh" }
+      ]
+    },
+    {
+      "pid": "012F",
+      "pid_init": "ATSH7E0",
+      "parameters": [
+        { "name": "Fuel_Level", "expression": "A * 100 / 255", "unit": "%" }
+      ]
+    },
+    {
+      "pid": "0142",
+      "pid_init": "ATSH7E0",
+      "parameters": [
+        { "name": "Control_Module_Voltage", "expression": "((A*256)+B)/1000", "unit": "V" }
+      ]
+    },
+    {
+      "pid": "0104",
+      "pid_init": "ATSH7E0",
+      "parameters": [
+        { "name": "Engine_Load", "expression": "A * 100 / 255", "unit": "%" }
+      ]
+    },
+    {
+      "pid": "01A6",
+      "pid_init": "ATSH7E0",
+      "parameters": [
+        { "name": "Odometer", "expression": "((A*16777216)+(B*65536)+(C*256)+D)/10", "unit": "km" }
+      ]
+    },
+    {
+      "pid": "221101",
+      "pid_init": "ATSH7E1",
+      "parameters": [
+        { "name": "Climate_Fan_Speed", "expression": "B0", "unit": "level" },
+        { "name": "AC_Active", "expression": "(B3 >> 6) & 1", "unit": "bool" },
+        { "name": "Heater_Active", "expression": "(B3 >> 5) & 1", "unit": "bool" }
+      ]
+    }
+  ]
+}
