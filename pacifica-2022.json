@@ -1,5 +1,5 @@
 {
-  "car_model": "Chrysler: Pacifica Hybrid 2022 Master",
+  "car_model": "Chrysler: Pacifica Hybrid 2022 Master v5",
   "init": "ATSP6;ATST96;",
   "pids": [
     {
@@ -14,9 +14,9 @@
       "pid": "220104",
       "pid_init": "ATSH7E4;",
       "parameters": [
-        { "name": "SOH_Main", "expression": "B18 / 2.55", "unit": "%" },
-        { "name": "SOH_Capacity_Ah", "expression": "([B19:B20]) / 100", "unit": "Ah" },
-        { "name": "SOH_Low_Cell", "expression": "B21 / 2.55", "unit": "%" }
+        { "name": "SOH_Main", "expression": "B17 / 2.55", "unit": "%" },
+        { "name": "SOH_Capacity_Ah", "expression": "([B18:B19]) / 100", "unit": "Ah" },
+        { "name": "SOH_Low_Cell", "expression": "B20 / 2.55", "unit": "%" }
       ]
     },
     {
@@ -45,6 +45,13 @@
       "pid_init": "ATSH7E0;",
       "parameters": [
         { "name": "Control_Module_Voltage", "expression": "((A*256)+B)/1000", "unit": "V" }
+      ]
+    },
+    {
+      "pid": "0104",
+      "pid_init": "ATSH7E0;",
+      "parameters": [
+        { "name": "Engine_Load", "expression": "A * 100 / 255", "unit": "%" }
       ]
     },
     {
